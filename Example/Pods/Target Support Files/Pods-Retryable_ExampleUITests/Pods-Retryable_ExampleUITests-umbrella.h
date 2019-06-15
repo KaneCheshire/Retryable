@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Retryable_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Retryable_TestsVersionString[];
+FOUNDATION_EXPORT double Pods_Retryable_ExampleUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Retryable_ExampleUITestsVersionString[];
 

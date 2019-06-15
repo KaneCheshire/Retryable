@@ -12,23 +12,25 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		99C9912EE1B1724C4D8EAE3F /* Pods_Retryable_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7B0D1EBA74A3C10F623305 /* Pods_Retryable_ExampleUITests.framework */; };
 		C145495EB992838028D4C10F /* Pods_Retryable_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5C3840DB0B3E75C1BE410 /* Pods_Retryable_Example.framework */; };
-		C93A00C4F1B1D30E76CA80C6 /* Pods_Retryable_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CD12D510A17C231D37E030 /* Pods_Retryable_Tests.framework */; };
+		C309EBCC22B591EB0055D9A0 /* MyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309EBCB22B591EB0055D9A0 /* MyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+		C309EBCE22B591EB0055D9A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = Retryable;
+			remoteInfo = Retryable_Example;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01E4F9B3CCA71695360CC909 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		12C70DADD9620A9E52D0AD87 /* Pods-Retryable_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_ExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-Retryable_ExampleUITests/Pods-Retryable_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2D7B0D1EBA74A3C10F623305 /* Pods_Retryable_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Retryable_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		586E7FDEA134CD45446F7BB4 /* Pods-Retryable_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Retryable_Tests/Pods-Retryable_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A43F008B1AC571DAB0D1277 /* Retryable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Retryable.podspec; path = ../Retryable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5EB5C3840DB0B3E75C1BE410 /* Pods_Retryable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Retryable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,12 +41,13 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Retryable_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Retryable_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8B74E7766BA2402256C0127D /* Pods-Retryable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_Example.release.xcconfig"; path = "Target Support Files/Pods-Retryable_Example/Pods-Retryable_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A1E04CACCCF2D3942098CD2C /* Pods-Retryable_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_Tests.release.xcconfig"; path = "Target Support Files/Pods-Retryable_Tests/Pods-Retryable_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B0357ABE101B8F49D24DC85A /* Pods-Retryable_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_ExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Retryable_ExampleUITests/Pods-Retryable_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B177EA854F69856589DA0B64 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C309EBC922B591EB0055D9A0 /* Retryable_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Retryable_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C309EBCB22B591EB0055D9A0 /* MyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUITests.swift; sourceTree = "<group>"; };
+		C309EBCD22B591EB0055D9A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2C3311777B00AD29919DDA0 /* Pods-Retryable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_Example.debug.xcconfig"; path = "Target Support Files/Pods-Retryable_Example/Pods-Retryable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CD12D510A17C231D37E030 /* Pods_Retryable_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Retryable_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -58,11 +61,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE21AFB9204008FA782 /* Frameworks */ = {
+		C309EBC622B591EB0055D9A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C93A00C4F1B1D30E76CA80C6 /* Pods_Retryable_Tests.framework in Frameworks */,
+				99C9912EE1B1724C4D8EAE3F /* Pods_Retryable_ExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,8 @@
 				8B74E7766BA2402256C0127D /* Pods-Retryable_Example.release.xcconfig */,
 				586E7FDEA134CD45446F7BB4 /* Pods-Retryable_Tests.debug.xcconfig */,
 				A1E04CACCCF2D3942098CD2C /* Pods-Retryable_Tests.release.xcconfig */,
+				B0357ABE101B8F49D24DC85A /* Pods-Retryable_ExampleUITests.debug.xcconfig */,
+				12C70DADD9620A9E52D0AD87 /* Pods-Retryable_ExampleUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -85,7 +90,7 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Retryable */,
-				607FACE81AFB9204008FA782 /* Tests */,
+				C309EBCA22B591EB0055D9A0 /* Retryable_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				1ABAF7EC78863FBBCFB70BCA /* Pods */,
 				6DE386EF985CB331C6A6061B /* Frameworks */,
@@ -96,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* Retryable_Example.app */,
-				607FACE51AFB9204008FA782 /* Retryable_Tests.xctest */,
+				C309EBC922B591EB0055D9A0 /* Retryable_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,23 +128,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		607FACE91AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEA1AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +143,18 @@
 			children = (
 				5EB5C3840DB0B3E75C1BE410 /* Pods_Retryable_Example.framework */,
 				F1CD12D510A17C231D37E030 /* Pods_Retryable_Tests.framework */,
+				2D7B0D1EBA74A3C10F623305 /* Pods_Retryable_ExampleUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C309EBCA22B591EB0055D9A0 /* Retryable_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C309EBCB22B591EB0055D9A0 /* MyUITests.swift */,
+				C309EBCD22B591EB0055D9A0 /* Info.plist */,
+			);
+			path = Retryable_ExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,25 +178,25 @@
 			productReference = 607FACD01AFB9204008FA782 /* Retryable_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* Retryable_Tests */ = {
+		C309EBC822B591EB0055D9A0 /* Retryable_ExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Retryable_Tests" */;
+			buildConfigurationList = C309EBD022B591EB0055D9A0 /* Build configuration list for PBXNativeTarget "Retryable_ExampleUITests" */;
 			buildPhases = (
-				C5FB287EBCB2A5240A62073B /* [CP] Check Pods Manifest.lock */,
-				607FACE11AFB9204008FA782 /* Sources */,
-				607FACE21AFB9204008FA782 /* Frameworks */,
-				607FACE31AFB9204008FA782 /* Resources */,
-				437D33FC3648A387F6D41186 /* [CP] Embed Pods Frameworks */,
+				146458AE3ABF166CA39953E7 /* [CP] Check Pods Manifest.lock */,
+				C309EBC522B591EB0055D9A0 /* Sources */,
+				C309EBC622B591EB0055D9A0 /* Frameworks */,
+				C309EBC722B591EB0055D9A0 /* Resources */,
+				18D1D779D8718E1F08F33600 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+				C309EBCF22B591EB0055D9A0 /* PBXTargetDependency */,
 			);
-			name = Retryable_Tests;
-			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Retryable_Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = Retryable_ExampleUITests;
+			productName = Retryable_ExampleUITests;
+			productReference = C309EBC922B591EB0055D9A0 /* Retryable_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -206,7 +204,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -214,9 +212,10 @@
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 1020;
 					};
-					607FACE41AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 1020;
+					C309EBC822B591EB0055D9A0 = {
+						CreatedOnToolsVersion = 10.2;
+						DevelopmentTeam = 9BCL7VAFF4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -236,7 +235,7 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* Retryable_Example */,
-				607FACE41AFB9204008FA782 /* Retryable_Tests */,
+				C309EBC822B591EB0055D9A0 /* Retryable_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,7 +251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE31AFB9204008FA782 /* Resources */ = {
+		C309EBC722B591EB0055D9A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,13 +261,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		437D33FC3648A387F6D41186 /* [CP] Embed Pods Frameworks */ = {
+		146458AE3ABF166CA39953E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Retryable_ExampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18D1D779D8718E1F08F33600 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Retryable_Tests/Pods-Retryable_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Retryable_ExampleUITests/Pods-Retryable_ExampleUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Retryable/Retryable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -277,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Retryable_Tests/Pods-Retryable_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Retryable_ExampleUITests/Pods-Retryable_ExampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		593DA7C409BBA5931D1A1086 /* [CP] Check Pods Manifest.lock */ = {
@@ -302,28 +323,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5FB287EBCB2A5240A62073B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Retryable_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -336,21 +335,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE11AFB9204008FA782 /* Sources */ = {
+		C309EBC522B591EB0055D9A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				C309EBCC22B591EB0055D9A0 /* MyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+		C309EBCF22B591EB0055D9A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* Retryable_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+			targetProxy = C309EBCE22B591EB0055D9A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,41 +506,58 @@
 			};
 			name = Release;
 		};
-		607FACF31AFB9204008FA782 /* Debug */ = {
+		C309EBD122B591EB0055D9A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 586E7FDEA134CD45446F7BB4 /* Pods-Retryable_Tests.debug.xcconfig */;
+			baseConfigurationReference = B0357ABE101B8F49D24DC85A /* Pods-Retryable_ExampleUITests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9BCL7VAFF4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Retryable_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kane.codes.Retryable-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retryable_Example.app/Retryable_Example";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Retryable_Example;
 			};
 			name = Debug;
 		};
-		607FACF41AFB9204008FA782 /* Release */ = {
+		C309EBD222B591EB0055D9A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1E04CACCCF2D3942098CD2C /* Pods-Retryable_Tests.release.xcconfig */;
+			baseConfigurationReference = 12C70DADD9620A9E52D0AD87 /* Pods-Retryable_ExampleUITests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9BCL7VAFF4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Retryable_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kane.codes.Retryable-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retryable_Example.app/Retryable_Example";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Retryable_Example;
 			};
 			name = Release;
 		};
@@ -566,11 +582,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Retryable_Tests" */ = {
+		C309EBD022B591EB0055D9A0 /* Build configuration list for PBXNativeTarget "Retryable_ExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				607FACF31AFB9204008FA782 /* Debug */,
-				607FACF41AFB9204008FA782 /* Release */,
+				C309EBD122B591EB0055D9A0 /* Debug */,
+				C309EBD222B591EB0055D9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

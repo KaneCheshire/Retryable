@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'Retryable_Example' do
 
-  target 'Retryable_Tests' do
+  target 'Retryable_ExampleUITests' do
     inherit! :search_paths
     
     pod 'Retryable', :path => '../'
