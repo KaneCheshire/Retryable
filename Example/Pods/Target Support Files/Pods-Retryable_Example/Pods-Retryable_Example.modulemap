@@ -1,0 +1,6 @@
+framework module Pods_Retryable_Example {
+  umbrella header "Pods-Retryable_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
