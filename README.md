@@ -11,6 +11,8 @@ Unlike other options for making your automation tests re-run when a failure occu
 
 Even better, Retryable lets you mark specific portions of a test as flaky, so that any other failure during the test function is not automatically retried and will fail normally.
 
+Retryable also works great with parallel automation tests.
+
 ### Opting into retries
 
 To opt into retries you only need to do two things:

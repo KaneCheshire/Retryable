@@ -9,6 +9,8 @@
 import XCTest
 import Retryable
 
+var shouldPass = false
+
 class MyUITests: RetryableTestCase {
 
     override func setUp() {
@@ -20,16 +22,17 @@ class MyUITests: RetryableTestCase {
         XCUIApplication().terminate()
     }
 
-    func testExample() {
-        func test_awesomeFeature() {
-            // ... Your automation code you're always expecting to work ...
-            
-            flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator")) {
-                // ... Your automation code that sometimes fails because UserDefaults is unreliable
-            }
-            
-            // ... Some more of your automation code you're always expecting to work ...
+    func test_awesomeFeature() {
+        // ... Your automation code you're always expecting to work ...
+        
+        flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator")) {
+            // ... Your automation code that sometimes fails because UserDefaults is unreliable
+            let old = shouldPass
+            shouldPass = true
+            XCTAssert(old)
         }
+        
+        // ... Some more of your automation code you're always expecting to work ...
     }
 
 }
