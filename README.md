@@ -24,8 +24,7 @@ class MyUITests: RetryableTestCase {
 
 }
 ```
-
-- Mark the portion of your test case that sometimes fails as flaky:
+2: Mark the portion of your test case that sometimes fails as flaky:
 
 ```swift
 class MyUITests: RetryableTestCase {
