@@ -54,7 +54,7 @@ Retryable is currently available through Cocoapods. When Xcode 11 is released Re
 
 ## Author
 
-kanecheshire, @kanecheshrie
+kanecheshire, @kanecheshire
 
 ## License
 
