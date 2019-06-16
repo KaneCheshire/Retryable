@@ -58,11 +58,11 @@ These two requirements help prevent bad habits of marking everything as flaky wi
 
 It can be important to know when a test has been retried so that you can track flakiness. Retryable helps with this by creating a JSON file containing all the tests that were retried, which you can look for and parse as part of your CI process.
 
-This is the structure of the JSON file which is called `retryable_falures.json`:
+This is the structure of the JSON file which is called `retryable-retries.json`:
 
 ```
 {
-    "failedTests": [
+    "retries": [
         {
             "name": "-[MyUITests test_awesomeFeature]"
         },
@@ -80,14 +80,14 @@ An example of how you could parse this using Fastlane/Ruby could be something li
 
 ```ruby
 lane :tests do |options|
-  scan # After you've called scan, you can get a path to the derived data
+  scan
   path_to_derived_data = lane_context[:SCAN_DERIVED_DATA_PATH]
-  path_to_json = Dir["#{path}/**/*.xcresult/retryable_failures.json"].last
+  path_to_json = Dir["#{path}/**/*.xcresult/retryable-retries.json"].last
   if path_to_json != nil
     file = File.open(path_to_json, 'rb')
-    failures = JSON.parse(file.read)
+    retries = JSON.parse(file.read)
     file.close
-    count_of_retried_tests = failures["failedTests"].count
+    count_of_retried_tests = retries["retries"].count
     # Do something with the count of failures that were retried, like send a Slack message
   end
 end

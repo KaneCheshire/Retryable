@@ -11,7 +11,7 @@ final class RetryCoordinator: NSObject {
     // MARK: - Custom types -
     // MARK: Private
     
-    private struct Failures: Codable {
+    private struct Retries: Codable {
         
         struct Test: Codable {
             
@@ -19,7 +19,7 @@ final class RetryCoordinator: NSObject {
             
         }
         
-        let failedTests: [Test]
+        let retries: [Test]
         
     }
     
@@ -58,13 +58,13 @@ final class RetryCoordinator: NSObject {
     
     // MARK: Private
     
-    private func addFailedTestsToXCResultBundle() {
-        guard let url = URL.xcresultBundle?.appendingPathComponent("retryable_failures.json") else { return }
+    private func addRetriedTestsToXCResultBundle() {
+        guard let url = URL.xcresultBundle?.appendingPathComponent("retryable-retries.json") else { return }
         let data = (try? Data(contentsOf: url)) ?? Data()
-        let existingFailures = (try? JSONDecoder().decode(Failures.self, from: data)) ?? Failures(failedTests: [])
-        let newFailedTests = failures.map { Failures.Test(name: $0.name) }
-        let newFailures = Failures(failedTests: existingFailures.failedTests + newFailedTests)
-        let newData = try? JSONEncoder().encode(newFailures)
+        let existingRetries = (try? JSONDecoder().decode(Retries.self, from: data)) ?? Retries(retries: [])
+        let newRetriedTests = failures.map { Retries.Test(name: $0.name) }
+        let newRetries = Retries(retries: existingRetries.retries + newRetriedTests)
+        let newData = try? JSONEncoder().encode(newRetries)
         try? newData?.write(to: url)
     }
 	
@@ -75,7 +75,7 @@ extension RetryCoordinator: XCTestObservation {
 	func testSuiteDidFinish(_ testSuite: XCTestSuite) {
         guard !failures.isEmpty else { return }
 		let suite = RetryTestSuite(failures)
-        addFailedTestsToXCResultBundle()
+        addRetriedTestsToXCResultBundle()
         failures = []
         suite.run()
 	}

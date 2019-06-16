@@ -2,12 +2,12 @@
 lane :tests do |options|
   scan
   path_to_derived_data = lane_context[:SCAN_DERIVED_DATA_PATH]
-  path_to_json = Dir["#{path}/**/*.xcresult/retryable_failures.json"].last
+  path_to_json = Dir["#{path}/**/*.xcresult/retryable-retries.json"].last
   if path_to_json != nil
     file = File.open(path_to_json, 'rb')
-    failures = JSON.parse(file.read)
+    retries = JSON.parse(file.read)
     file.close
-    count_of_retried_tests = failures["failedTests"].count
+    count_of_retried_tests = retries["retries"].count
     # Do something with the count of failures that were retried, like send a Slack message
   end
 end
