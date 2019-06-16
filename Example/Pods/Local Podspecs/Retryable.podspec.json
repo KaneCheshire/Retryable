@@ -1,23 +1,26 @@
 {
   "name": "Retryable",
   "version": "0.1.0",
-  "summary": "A short description of Retryable.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Retryable iOS automation tests.",
+  "description": "Retryable iOS automation tests.",
   "homepage": "https://github.com/kanecheshire/Retryable",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "kanecheshire": "kane.cheshire@googlemail.com"
+    "kanecheshire": "@kanecheshire"
   },
   "source": {
     "git": "https://github.com/kanecheshire/Retryable.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/kanecheshire",
   "platforms": {
     "ios": "8.0"
   },
+  "swift_versions": "5.0",
   "source_files": "Retryable/Classes/**/*",
-  "frameworks": "XCTest"
+  "frameworks": "XCTest",
+  "swift_version": "5.0"
 }

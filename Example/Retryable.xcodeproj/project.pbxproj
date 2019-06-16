@@ -15,6 +15,7 @@
 		99C9912EE1B1724C4D8EAE3F /* Pods_Retryable_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7B0D1EBA74A3C10F623305 /* Pods_Retryable_ExampleUITests.framework */; };
 		C145495EB992838028D4C10F /* Pods_Retryable_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5C3840DB0B3E75C1BE410 /* Pods_Retryable_Example.framework */; };
 		C309EBCC22B591EB0055D9A0 /* MyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309EBCB22B591EB0055D9A0 /* MyUITests.swift */; };
+		C309EBD622B6A5760055D9A0 /* SomeMoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309EBD522B6A5760055D9A0 /* SomeMoreUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C309EBC922B591EB0055D9A0 /* Retryable_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Retryable_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C309EBCB22B591EB0055D9A0 /* MyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUITests.swift; sourceTree = "<group>"; };
 		C309EBCD22B591EB0055D9A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C309EBD522B6A5760055D9A0 /* SomeMoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeMoreUITests.swift; sourceTree = "<group>"; };
 		E2C3311777B00AD29919DDA0 /* Pods-Retryable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Retryable_Example.debug.xcconfig"; path = "Target Support Files/Pods-Retryable_Example/Pods-Retryable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CD12D510A17C231D37E030 /* Pods_Retryable_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Retryable_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				C309EBCB22B591EB0055D9A0 /* MyUITests.swift */,
+				C309EBD522B6A5760055D9A0 /* SomeMoreUITests.swift */,
 				C309EBCD22B591EB0055D9A0 /* Info.plist */,
 			);
 			path = Retryable_ExampleUITests;
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C309EBD622B6A5760055D9A0 /* SomeMoreUITests.swift in Sources */,
 				C309EBCC22B591EB0055D9A0 /* MyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Retryable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -498,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Retryable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

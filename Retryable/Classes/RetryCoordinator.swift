@@ -40,16 +40,54 @@ final class RetryCoordinator: NSObject {
 	func addFailedTest(_ failedTest: RetryableTestCase) {
 		failures.insert(failedTest)
 	}
+    
+    // MARK: Private
+    
+    private func addFailedTestsToXCResultBundle() {
+        guard let url = URL.xcresultBundle?.appendingPathComponent("retryable_failures.json") else { return }
+        let data = (try? Data(contentsOf: url)) ?? Data()
+        let existingFailures = (try? JSONDecoder().decode(Failures.self, from: data)) ?? Failures(failedTests: [])
+        let newFailedTests = failures.map { Failures.Test(name: $0.name) }
+        let newFailures = Failures(failedTests: existingFailures.failedTests + newFailedTests)
+        let newData = try? JSONEncoder().encode(newFailures)
+        try? newData?.write(to: url)
+    }
+    
+    struct Failures: Codable {
+        
+        let failedTests: [Test]
+        
+        struct Test: Codable {
+            
+            let name: String
+            
+        }
+        
+    }
 	
 }
 
 extension RetryCoordinator: XCTestObservation {
 	
 	func testSuiteDidFinish(_ testSuite: XCTestSuite) {
-		guard !failures.isEmpty else { return }
+        guard !failures.isEmpty else { return }
 		let suite = RetryTestSuite(failures)
-		failures = []
-		suite.run()
+        addFailedTestsToXCResultBundle()
+        failures = []
+        suite.run()
 	}
 	
+}
+
+private extension URL {
+    
+    static var xcresultBundle: URL? {
+        guard let pathToConfig = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] else { return nil }
+        var url = URL(fileURLWithPath: pathToConfig)
+        guard url.pathComponents.contains(where: { $0.contains(".xcresult") }) else { return nil }
+        while !url.lastPathComponent.contains(".xcresult") { url.deleteLastPathComponent() }
+        guard !url.lastPathComponent.isEmpty else { return nil }
+        return url
+    }
+    
 }
