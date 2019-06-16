@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Retryable'
-  s.version          = '0.3.0'
+  s.version          = '0.4.0'
   s.summary          = 'Retryable iOS automation tests.'
 
   s.description      = <<-DESC
