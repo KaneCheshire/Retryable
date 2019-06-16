@@ -25,8 +25,8 @@ class SomeMoreUITests: RetryableTestCase {
     func test_anotherAwesomeFeature() {
         // ... Your automation code you're always expecting to work ...
 
-        flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator")) {
-            // ... Your automation code that sometimes fails because UserDefaults is unreliable
+        flaky(.fixable(reason: "We've got a race condition here")) {
+            // ... Your automation code that sometimes fails because there's a race condition with the server
             let old = shouldPass
             shouldPass = true
             XCTAssert(old)
