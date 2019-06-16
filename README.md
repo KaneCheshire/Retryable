@@ -95,7 +95,7 @@ end
 
 ## Under the hood
 
-The way `Retryable` works is not immediately obvious and took a little bit of understanding of how `XCTestCase`s are run.
+The way `Retryable` works is not immediately obvious and takes a little bit of understanding of how `XCTestCase`s are run.
 
 For **every test function** you write and want to run, `XCTest` creates a **new instance** of the `XCTestCase` that defined the functions. That means you can have multiple instances of your test case, **one for each function**. `XCTest` initializes each `XCTestCase` with a `Selector` for the actual function it wants to run.
 
