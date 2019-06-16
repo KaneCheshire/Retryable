@@ -82,7 +82,7 @@ An example of how you could parse this using Fastlane/Ruby could be something li
 lane :tests do |options|
   scan
   path_to_derived_data = lane_context[:SCAN_DERIVED_DATA_PATH]
-  path_to_json = Dir["#{path}/**/*.xcresult/retryable-retries.json"].last
+  path_to_json = Dir["#{path_to_derived_data}/**/*.xcresult/retryable-retries.json"].last
   if path_to_json != nil
     file = File.open(path_to_json, 'rb')
     retries = JSON.parse(file.read)
