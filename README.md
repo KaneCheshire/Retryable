@@ -22,6 +22,8 @@ To opt into retries you only need to do two things:
 1: Make your test cases subclass the `RetryableTestCase` instead of `XCTestCase`:
 
 ```swift
+import Retryable
+
 class MyUITests: RetryableTestCase {
 
 }
@@ -29,6 +31,8 @@ class MyUITests: RetryableTestCase {
 2: Mark the portion of your test case that sometimes fails as flaky:
 
 ```swift
+import Retryable
+
 class MyUITests: RetryableTestCase {
 
     func test_awesomeFeature() {
@@ -85,6 +89,12 @@ For **every test function** you write and want to run, `XCTest` creates a **new 
 - Finally, `Retryable` observes the ending of `XCTestSuite`s and then re-runs the failed tests it detected in a new `XCTestSuite`.
 
 > Note: In addition to detecting if a failure occurred because of a flake, Retryable also checks if the test function has been retried a maximum number of times. By default this is a maximum of 1 times.
+
+## Good to know
+
+Since `Retryable` intercepts calls to record failures, tests that fail while marked as flaky and that are queued for a retry will show as passing. This is a bit confusing but unavoidable, since allowing the flake to be marked as a failure by `XCTest` would fail the whole run, making the re-running of flakes pointless.
+
+![Example](example.png)
 
 ## Installation
 

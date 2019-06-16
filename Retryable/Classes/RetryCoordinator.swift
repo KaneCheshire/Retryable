@@ -8,6 +8,21 @@ import XCTest
 /// Coordidates retrying failing test cases.
 final class RetryCoordinator: NSObject {
 	
+    // MARK: - Custom types -
+    // MARK: Private
+    
+    private struct Failures: Codable {
+        
+        struct Test: Codable {
+            
+            let name: String
+            
+        }
+        
+        let failedTests: [Test]
+        
+    }
+    
 	// MARK: - Properties -
 	// MARK: Internal
 	
@@ -52,18 +67,6 @@ final class RetryCoordinator: NSObject {
         let newData = try? JSONEncoder().encode(newFailures)
         try? newData?.write(to: url)
     }
-    
-    struct Failures: Codable {
-        
-        let failedTests: [Test]
-        
-        struct Test: Codable {
-            
-            let name: String
-            
-        }
-        
-    }
 	
 }
 
@@ -81,12 +84,12 @@ extension RetryCoordinator: XCTestObservation {
 
 private extension URL {
     
+    /// Attempts to find the URL to the xcresult bundle for this test run.
     static var xcresultBundle: URL? {
         guard let pathToConfig = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] else { return nil }
         var url = URL(fileURLWithPath: pathToConfig)
         guard url.pathComponents.contains(where: { $0.contains(".xcresult") }) else { return nil }
         while !url.lastPathComponent.contains(".xcresult") { url.deleteLastPathComponent() }
-        guard !url.lastPathComponent.isEmpty else { return nil }
         return url
     }
     
