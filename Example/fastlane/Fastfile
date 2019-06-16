@@ -1,5 +1,4 @@
 
-desc "Description of what the lane does"
 lane :tests do |options|
   scan
   path_to_derived_data = lane_context[:SCAN_DERIVED_DATA_PATH]

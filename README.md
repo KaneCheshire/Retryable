@@ -76,6 +76,23 @@ This is the structure of the JSON file which is called `retryable_falures.json`:
 
 Once you've detected and parsed that file, you could, for example, send a Slack message to indicate that tests have passed but the above tests had to be retried.
 
+An example of how you could parse this using Fastlane/Ruby could be something like this:
+
+```ruby
+lane :tests do |options|
+  scan # After you've called scan, you can get a path to the derived data
+  path_to_derived_data = lane_context[:SCAN_DERIVED_DATA_PATH]
+  path_to_json = Dir["#{path}/**/*.xcresult/retryable_failures.json"].last
+  if path_to_json != nil
+    file = File.open(path_to_json, 'rb')
+    failures = JSON.parse(file.read)
+    file.close
+    count_of_retried_tests = failures["failedTests"].count
+    # Do something with the count of failures that were retried, like send a Slack message
+  end
+end
+```
+
 ## Under the hood
 
 The way `Retryable` works is not immediately obvious and took a little bit of understanding of how `XCTestCase`s are run.
