@@ -7,9 +7,7 @@
 //
 
 import XCTest
-import Retryable
-
-private var shouldPass = false // Allows us to simulate an initial failure
+@testable import Retryable
 
 class SomeMoreUITests: RetryableTestCase {
     
@@ -25,12 +23,8 @@ class SomeMoreUITests: RetryableTestCase {
     func test_anotherAwesomeFeature() {
         // ... Your automation code you're always expecting to work ...
 
-        flaky(.fixable(reason: "We've got a race condition here")) {
-            // ... Your automation code that sometimes fails because there's a race condition with the server
-            let old = shouldPass
-            shouldPass = true
-            XCTAssert(old)
-        }
+        // ... Your automation code that sometimes fails because there's a race condition with the server
+        flaky(.fixable(reason: "We've got a race condition here"), XCTAssert(retryCount == 1))
         
         // ... Some more of your automation code you're always expecting to work ...
     }

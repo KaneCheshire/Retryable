@@ -22,12 +22,12 @@ open class RetryableTestCase: XCTestCase {
 		
 		/// Represents a type of flakiness that a flaky test can be.
 		///
-		/// - fixable: The flakiness is fixable. When using this case you're also required to provide a reason for using it.
-		/// - notFixable: The flakiness is not fixable (e.g. something the simulator does like not properly saving UserDefaults). When using this case you're also required to provide a reason for using it.
+		/// - fixable: The flakiness is fixable. When using this case you're also required to provide a reason for using it. Fixable flakes are hard coded to retry a maximum of 1 times.
+		/// - notFixable: The flakiness is not fixable (e.g. something the simulator does like not properly saving UserDefaults). When using this case you're also required to provide a reason for using it. Non-fixable flakes also request a max retry count, depending on how severe your flake is you might want to set this to more than 1.
 		public enum Flakiness {
             
-			case fixable(reason: String)
-			case notFixable(reason: String)
+            case fixable(reason: String)
+            case notFixable(reason: String, maxRetryCount: Int)
             
 		}
 		
@@ -38,6 +38,11 @@ open class RetryableTestCase: XCTestCase {
 	// MARK: - Properties -
 	// MARK: Overrides
 	
+    override open class var defaultTestSuite: XCTestSuite {
+        _ = RetryCoordinator.shared
+        return super.defaultTestSuite
+    }
+    
 	override open var testRunClass: AnyClass? {
 		return RetryableTestCaseRun.self
 	}
@@ -45,16 +50,10 @@ open class RetryableTestCase: XCTestCase {
     // MARK: Open
     
     /// The reliability of the test case. `.reliable` by default.
-    /// Do not change this in `setUp` this should be set in individual test functions.
-    /// Although you can change this setting manually in a test function, instead it's recommended to use the `flaky()` function which
-    /// allows you to define a specific portion of your test as flaky but let the rest run as normal.
     /// If a test fails while it is marked as flaky, so long as the max retry count has not been hit then the test function will automatically retry.
     /// It's very important to understand that each test function in your test case class creates a new instance of your test case class, which is
     /// how only specific failing test functions are re-run, rather than every test function.
-    open var reliability: Reliability = .reliable
-    
-    /// The maximum number of times a test can be retried. Default is 1.
-    open var maxRetryCount: Int = 1
+    var reliability: Reliability = .reliable
 	
 	// MARK: Internal
 	
@@ -74,10 +73,10 @@ open class RetryableTestCase: XCTestCase {
 	
     override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
 		switch reliability {
-		case .flaky(let flakiness) where retryCount < maxRetryCount:
-			handleFlakyTestFailed(with: flakiness, description: description, filePath: filePath, lineNumber: lineNumber, expected: expected)
+		case .flaky(let flakiness) where retryCount < flakiness.maxRetryCount:
+            handleFlakyTestFailed(with: flakiness, description: description, filePath: filePath, lineNumber: lineNumber, expected: expected)
 		default:
-			super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
+            super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
 		}
 	}
 	
@@ -95,6 +94,19 @@ open class RetryableTestCase: XCTestCase {
 		tests()
 		reliability = .reliable
 	}
+    
+    /// Use this function to "section off" parts of your test function with different types of flakiness.
+    /// This test function is far preferred than setting the `reliability` property yourself during a test run, since
+    /// this function automatically manages the reliability during the specific tests you run as part of this block.
+    ///
+    /// - Parameters:
+    ///   - flakiness: The type of flakiness. I.e. fixable or not fixable.
+    ///   - tests: The tests to run which are flaky.
+    open func flaky(_ flakiness: Reliability.Flakiness, _ tests: @autoclosure () -> Void) {
+        reliability = .flaky(flakiness)
+        tests()
+        reliability = .reliable
+    }
 	
 	// MARK: Private
 	
@@ -127,4 +139,15 @@ open class RetryableTestCase: XCTestCase {
 		}
 	}
 	
+}
+
+extension RetryableTestCase.Reliability.Flakiness {
+    
+    var maxRetryCount: Int {
+        switch self {
+        case .fixable: return 1 // U no get to choose for fixable flakes. If they're annoying you, fix them!
+        case .notFixable(_, let maxRetryCount): return maxRetryCount
+        }
+    }
+    
 }

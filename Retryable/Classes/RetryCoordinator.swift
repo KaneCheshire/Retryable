@@ -11,13 +11,15 @@ final class RetryCoordinator: NSObject {
     // MARK: - Custom types -
     // MARK: Private
     
-    private struct Retries: Codable {
+    fileprivate struct Retries: Codable {
         
         struct Test: Codable {
             
             let name: String
             let fixable: Bool
             let reason: String
+            let attemptedRetries: Int
+            let maxRetriesAllowed: Int
             
         }
         
@@ -64,17 +66,9 @@ final class RetryCoordinator: NSObject {
         guard let url = URL.xcresultBundle?.appendingPathComponent("retryable-retries.json") else { return }
         let data = (try? Data(contentsOf: url)) ?? Data()
         let existingRetries = (try? JSONDecoder().decode(Retries.self, from: data)) ?? Retries(retries: [])
-        let newRetriedTests: [Retries.Test] = failures.compactMap {
-            switch $0.reliability {
-            case .flaky(let flakiness):
-                switch flakiness {
-                case .fixable(let reason): return Retries.Test(name: $0.name, fixable: true, reason: reason)
-                case .notFixable(let reason): return Retries.Test(name: $0.name, fixable: false, reason: reason)
-                }
-            case .reliable: return nil // Shouldn't be possible
-            }
-        }
-        let sortedTests = (existingRetries.retries + newRetriedTests).sorted(by: { $0.name < $1.name })
+        let newRetriedTests: [Retries.Test] = failures.compactMap { .init(testCase: $0) }
+        let filteredExisting = existingRetries.retries.filter { retry in !newRetriedTests.contains { $0.name == retry.name } }
+        let sortedTests = (filteredExisting + newRetriedTests).sorted(by: { $0.name < $1.name })
         let newRetries = Retries(retries: sortedTests)
         let newData = try? JSONEncoder().encode(newRetries)
         try? newData?.write(to: url)
@@ -83,10 +77,10 @@ final class RetryCoordinator: NSObject {
 }
 
 extension RetryCoordinator: XCTestObservation {
-	
+    
 	func testSuiteDidFinish(_ testSuite: XCTestSuite) {
         guard !failures.isEmpty else { return }
-		let suite = RetryTestSuite(failures)
+        let suite = RetryTestSuite(failures)
         addRetriedTestsToXCResultBundle()
         failures = []
         suite.run()
@@ -103,6 +97,35 @@ private extension URL {
         guard url.pathComponents.contains(where: { $0.contains(".xcresult") }) else { return nil }
         while !url.lastPathComponent.contains(".xcresult") { url.deleteLastPathComponent() }
         return url
+    }
+    
+}
+
+private extension RetryCoordinator.Retries.Test {
+    
+    init(testCase: RetryableTestCase) {
+        switch testCase.reliability {
+        case .flaky(let flakiness):
+            self.init(name: testCase.name, fixable: flakiness.isFixable, reason: flakiness.reason, attemptedRetries: testCase.retryCount + 1, maxRetriesAllowed: flakiness.maxRetryCount)
+        case .reliable: fatalError()
+        }
+    }
+    
+}
+
+private extension RetryableTestCase.Reliability.Flakiness {
+    
+    var isFixable: Bool {
+        switch self {
+        case .fixable: return true
+        case .notFixable: return false
+        }
+    }
+    
+    var reason: String {
+        switch self {
+        case .fixable(let reason), .notFixable(let reason, _): return reason
+        }
     }
     
 }

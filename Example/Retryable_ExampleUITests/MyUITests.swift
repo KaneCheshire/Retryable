@@ -7,9 +7,7 @@
 //
 
 import XCTest
-import Retryable
-
-private var shouldPass = false // Allows us to simulate an initial failure
+@testable import Retryable
 
 class MyUITests: RetryableTestCase {
 
@@ -25,14 +23,16 @@ class MyUITests: RetryableTestCase {
     func test_awesomeFeature() {
         // ... Your automation code you're always expecting to work ...
         
-        flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator")) {
-            // ... Your automation code that sometimes fails because UserDefaults is unreliable
-            let old = shouldPass
-            shouldPass = true
-            XCTAssert(old)
-        }
+        flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator", maxRetryCount: 2),
+              someFlakyTestCode())
         
         // ... Some more of your automation code you're always expecting to work ...
+    }
+    
+    private func someFlakyTestCode() {
+        // ... Your automation code that sometimes fails because UserDefaults is unreliable
+        
+        XCTAssert(retryCount == 2)
     }
 
 }

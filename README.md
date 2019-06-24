@@ -15,6 +15,8 @@ Cruicially, `Retryable` expects you to mark **specific portions of a test** as f
 
 In addition to the above, `Retryable` also works great with parallel automation tests and also adds retried tests to a JSON file in the `xcresult` bundle so that you can track flakes and retries on CI.
 
+> NOTE: `Retryable` does not work with non-parallel UI tests run with Fastlane's `scan`. More info [here](https://github.com/KaneCheshire/Retryable/issues/2). Parallel tests are currently unaffected. Strongly consider making your tests parallel anyway, if you aren't already!
+
 ## Opting into retries
 
 To opt into retries you only need to do two things:
@@ -38,7 +40,7 @@ class MyUITests: RetryableTestCase {
     func test_awesomeFeature() {
         // ... Your automation code you're always expecting to work ...
 
-        flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator")) {
+        flaky(.notFixable(reason: "UserDefaults doesn't always save properly on the iOS 11 simulator", maxRetryCount: 1)) {
             // ... Your automation code that sometimes fails because UserDefaults is unreliable
         }
 
@@ -52,7 +54,31 @@ Note how part of the function is marked as flaky, and when marking as flaky you 
 
 Regardless of whether you think it's fixable, you're also required to provide a reason.
 
+> NOTE: You can only control the max retry count for non-fixable flakes. Fixable flakes will only be retried once.
+
 These two requirements help prevent bad habits of marking everything as flaky without properly investigating it, and helps document what's wrong for future developers on your codebase.
+
+`Retryable` also has a convenience `@autoclosure` argument when making a function as flaky so you can omit the `{}`:
+
+```swift
+func test_anotherAwesomeFeature() {
+
+    flaky(.fixable(reason: "There's a race condition here!"), XCTAssert(somethingToAssert))
+
+}
+```
+
+Instead of:
+
+```swift
+func test_anotherAwesomeFeature() {
+
+    flaky(.fixable(reason: "There's a race condition here!")) {
+      XCTAssert(somethingToAssert)
+    }
+
+}
+```
 
 ## Detecting retries on CI
 
@@ -65,13 +91,17 @@ This is the structure of the JSON file which is called `retryable-retries.json`:
   "retries": [
     {
       "name": "-[MyUITests test_awesomeFeature]",
-      "fixable": false,
-      "reason": "UserDefaults doesn't always save properly on the iOS 11 simulator"
+      "maxRetriesAllowed": 2,
+      "attemptedRetries": 1,
+      "reason": "UserDefaults doesn't always save properly on the iOS 11 simulator",
+      "fixable": false
     },
     {
       "name": "-[SomeMoreUITests test_anotherAwesomeFeature]",
-      "fixable": true,
-      "reason": "We've got a race condition here"
+      "maxRetriesAllowed": 1,
+      "attemptedRetries": 0,
+      "reason": "We've got a race condition here",
+      "fixable": true
     }
   ]
 }
@@ -119,7 +149,7 @@ Since `Retryable` intercepts calls to record failures, tests that fail while mar
 
 ## Installation
 
-Retryable is currently available through Cocoapods. When Xcode 11 is released Retryable will only be available through Swift Package Manager.
+`Retryable` is currently available through Cocoapods. When Xcode 11 is released `Retryable` will only be available through Swift Package Manager.
 
 ## Author
 
