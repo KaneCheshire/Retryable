@@ -46,16 +46,14 @@ open class RetryableTestCase: XCTestCase {
 	override open var testRunClass: AnyClass? {
 		return RetryableTestCaseRun.self
 	}
-    
-    // MARK: Open
+	
+	// MARK: Internal
     
     /// The reliability of the test case. `.reliable` by default.
     /// If a test fails while it is marked as flaky, so long as the max retry count has not been hit then the test function will automatically retry.
     /// It's very important to understand that each test function in your test case class creates a new instance of your test case class, which is
     /// how only specific failing test functions are re-run, rather than every test function.
     var reliability: Reliability = .reliable
-	
-	// MARK: Internal
 	
 	/// The current retry count of the test case. This will start at 0 for every test function in your test case due to the fact that
 	/// a new instance is created by XCUI for each test function when running your tests.
