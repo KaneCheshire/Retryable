@@ -1,5 +1,5 @@
 PODS:
-  - Retryable (0.1.0)
+  - Retryable (0.6.0)
 
 DEPENDENCIES:
   - Retryable (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Retryable: 1840416b92822bcb6362b1c00039496472d20637
+  Retryable: c8144a1fd64fd077f149df44f89f38568aaac521
 
 PODFILE CHECKSUM: d67b10cc6b29ad9741f3e8c477851e62819bda9a
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.9.1

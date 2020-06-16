@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		2E464AF9E5962D8823449B17169B7564 /* Pods-Retryable_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B64792F1981197D93BBF4E1C4323F2D9 /* Pods-Retryable_Example-dummy.m */; };
 		38AAAA4F60089AA1A37EFEB3A1912293 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
-		40FC9EB04B0D5F24646C14DE26F18492 /* Retryable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 039716B1B50AC4D66613DCCCB30F1407 /* Retryable-dummy.m */; };
-		44B26D7D1F847C87A2C4D085012F1DC4 /* Retryable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BBA2369E807860D1C7073E68772CCD1B /* Retryable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40FC9EB04B0D5F24646C14DE26F18492 /* Retryable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8EA2D38584A19DB3D98AEABEF0F34 /* Retryable-dummy.m */; };
+		44B26D7D1F847C87A2C4D085012F1DC4 /* Retryable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C69B3724438B81B138AF2C7A8207C90 /* Retryable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4736F31FEAC597296056CA3BD0E9EAD5 /* RetryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E4A4F342EE5C3F1F268B1479BB96E /* RetryCoordinator.swift */; };
 		49C0A76ABF4EB34738E99AC9586F5AE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
 		4FC7188F90E5D8AF2125281A52F19AD1 /* Pods-Retryable_ExampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F37465BD04F01B69890D0AB2ECEFD5CB /* Pods-Retryable_ExampleUITests-dummy.m */; };
 		82E2257FD00B10F7E919B7EBA0D85932 /* Pods-Retryable_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F476CBFB2487A9C3103BD223AD135C /* Pods-Retryable_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86E4FD93D3848CD5DDE6689BB359BEBC /* RetryableTestCaseRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E227B24E3DC54515343FBC8D4FA7D /* RetryableTestCaseRun.swift */; };
-		88BB1576F3D78BB731AC28E36418D381 /* RetryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C322F6BC0A32F60C02927C98E294C /* RetryCoordinator.swift */; };
 		C24F377BD7BCCC67D65B44159CBFD85A /* Pods-Retryable_ExampleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A813BB101851E5A8350E600146127F /* Pods-Retryable_ExampleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D702C2F05278394F65B5DF3335431FD8 /* RetryableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E2095C1E0420F0012399D9DE8ECCC6 /* RetryableTestCase.swift */; };
 		E2C767C9DC2D59973E9F58ADF97D6EC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C061463250766C9C05995AB8EE63E66 /* XCTest.framework */; };
 		E7A0809CE6F9FED3991C9EB7B0D6E011 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
-		F1AACDCE81D69360D269CFAAAFC1FFCD /* RetryTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C16FEAFA9A4433764CE119ED59B529 /* RetryTestSuite.swift */; };
+		EEF8778A44AE5D4512CD9AB709F327B9 /* RetryableTestCaseRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBD9FAA0AF8531E6751E402B1C7B5 /* RetryableTestCaseRun.swift */; };
+		F92DE70A0A8DE7C767C2A6A3B9DC7A5A /* RetryableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF7571BD01C306C3F939C5D7D97C13 /* RetryableTestCase.swift */; };
+		FB10961FAE23EA88A81FECD8435A6A58 /* RetryTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D6CF18335EA6873CB9F86DEE1B643 /* RetryTestSuite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,41 +42,42 @@
 
 /* Begin PBXFileReference section */
 		033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		039716B1B50AC4D66613DCCCB30F1407 /* Retryable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Retryable-dummy.m"; sourceTree = "<group>"; };
 		09051B145C8B3E68CAF96A1B23A6DA9C /* Retryable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Retryable.framework; path = Retryable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E49D50C395A0E9EE82032DD66D42CEB /* Pods-Retryable_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Retryable_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C69B3724438B81B138AF2C7A8207C90 /* Retryable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Retryable-umbrella.h"; sourceTree = "<group>"; };
+		295D6CF18335EA6873CB9F86DEE1B643 /* RetryTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryTestSuite.swift; path = Sources/RetryTestSuite.swift; sourceTree = "<group>"; };
 		2B063E919FE6903203351939A3F7303A /* Pods_Retryable_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Retryable_ExampleUITests.framework; path = "Pods-Retryable_ExampleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C061463250766C9C05995AB8EE63E66 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2C706E94318062BD0EE991A209DC8A4B /* Pods-Retryable_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Retryable_Example-Info.plist"; sourceTree = "<group>"; };
 		30F476CBFB2487A9C3103BD223AD135C /* Pods-Retryable_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Retryable_Example-umbrella.h"; sourceTree = "<group>"; };
-		374C76C2297916F7345A1CF93725E027 /* Retryable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Retryable.xcconfig; sourceTree = "<group>"; };
+		47FF7571BD01C306C3F939C5D7D97C13 /* RetryableTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryableTestCase.swift; path = Sources/RetryableTestCase.swift; sourceTree = "<group>"; };
 		4C3544B67020F70EBB71476A6C6E2096 /* Pods-Retryable_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Retryable_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		5066CDC6A3823C4E72B47FEB49E511FA /* Retryable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Retryable-prefix.pch"; sourceTree = "<group>"; };
 		5911C72537A121A73F3738A582C99DA3 /* Pods-Retryable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Retryable_Example.release.xcconfig"; sourceTree = "<group>"; };
-		595A643000A015E4608927289785FD57 /* Retryable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Retryable-Info.plist"; sourceTree = "<group>"; };
-		61F2B272D7E1EDEA2C9C8930415F3E66 /* Retryable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Retryable.modulemap; sourceTree = "<group>"; };
+		596DF6A69371162BCD0E316FDCE761E3 /* Retryable.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Retryable.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6FDD1BFA48B9A5F3C3F878D478968E75 /* Pods-Retryable_ExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Retryable_ExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		76A813BB101851E5A8350E600146127F /* Pods-Retryable_ExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Retryable_ExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		7762B98E4C185ADBBDA6A69069E5DA6E /* Pods-Retryable_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Retryable_Example.modulemap"; sourceTree = "<group>"; };
-		77C16FEAFA9A4433764CE119ED59B529 /* RetryTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryTestSuite.swift; path = Retryable/Classes/RetryTestSuite.swift; sourceTree = "<group>"; };
 		79AE251EC7F417ACC9A7003C0BA5214C /* Pods-Retryable_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Retryable_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		85DB8A4EA230869047B3A5E68961C73D /* Pods-Retryable_ExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Retryable_ExampleUITests.modulemap"; sourceTree = "<group>"; };
-		8D7056AE12C5E8E7410841B3EFEE199A /* Retryable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Retryable-prefix.pch"; sourceTree = "<group>"; };
-		914E227B24E3DC54515343FBC8D4FA7D /* RetryableTestCaseRun.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryableTestCaseRun.swift; path = Retryable/Classes/RetryableTestCaseRun.swift; sourceTree = "<group>"; };
 		9A6C68AD57F0A793CA1D5B61BC5EA129 /* Pods-Retryable_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Retryable_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FE581606DF23371CB608F75E16DC91B /* Pods-Retryable_ExampleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Retryable_ExampleUITests-Info.plist"; sourceTree = "<group>"; };
-		A9E2095C1E0420F0012399D9DE8ECCC6 /* RetryableTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryableTestCase.swift; path = Retryable/Classes/RetryableTestCase.swift; sourceTree = "<group>"; };
 		AA8A7047780D15C4EA7699CC1C8F19FE /* Pods-Retryable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Retryable_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		AD96520216C91180241CDE084AD1ADC7 /* Retryable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Retryable.modulemap; sourceTree = "<group>"; };
 		B64792F1981197D93BBF4E1C4323F2D9 /* Pods-Retryable_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Retryable_Example-dummy.m"; sourceTree = "<group>"; };
-		BBA2369E807860D1C7073E68772CCD1B /* Retryable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Retryable-umbrella.h"; sourceTree = "<group>"; };
-		C39C322F6BC0A32F60C02927C98E294C /* RetryCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryCoordinator.swift; path = Retryable/Classes/RetryCoordinator.swift; sourceTree = "<group>"; };
+		BE0E4A4F342EE5C3F1F268B1479BB96E /* RetryCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryCoordinator.swift; path = Sources/RetryCoordinator.swift; sourceTree = "<group>"; };
 		C673CCE271E9A79FFC055BD3455DF933 /* Pods_Retryable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Retryable_Example.framework; path = "Pods-Retryable_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F62D5889F779BBD7BA7588BB7B0D26 /* Pods-Retryable_ExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Retryable_ExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C813CD6110071EB43E178571E6226747 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		D13A3ADA0B96BBC113B7011E58CDFDFE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CC594126A66CDB07506448D427C3159B /* Retryable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Retryable-Info.plist"; sourceTree = "<group>"; };
+		D68491740E3E493B01FF1BF43BC33D1E /* Retryable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Retryable.release.xcconfig; sourceTree = "<group>"; };
+		DE6BBD9FAA0AF8531E6751E402B1C7B5 /* RetryableTestCaseRun.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryableTestCaseRun.swift; path = Sources/RetryableTestCaseRun.swift; sourceTree = "<group>"; };
+		E177FD9B34B2EE98BA94E868F9B5E775 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E3FCDD8A6D6AD3DDFAE3B48B1D37C47E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E6C064928BFD6CE6CCBC80D925C7B81B /* Pods-Retryable_ExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Retryable_ExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F37465BD04F01B69890D0AB2ECEFD5CB /* Pods-Retryable_ExampleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Retryable_ExampleUITests-dummy.m"; sourceTree = "<group>"; };
-		FCBA74B56AD8858BC2450D27544EA7E7 /* Retryable.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Retryable.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F8669F3789D69867DC9F36DF2B769517 /* Retryable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Retryable.debug.xcconfig; sourceTree = "<group>"; };
+		FAF8EA2D38584A19DB3D98AEABEF0F34 /* Retryable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Retryable-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +109,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E1B5D43BD000B3D75A96C18A20F570 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD96520216C91180241CDE084AD1ADC7 /* Retryable.modulemap */,
+				FAF8EA2D38584A19DB3D98AEABEF0F34 /* Retryable-dummy.m */,
+				CC594126A66CDB07506448D427C3159B /* Retryable-Info.plist */,
+				5066CDC6A3823C4E72B47FEB49E511FA /* Retryable-prefix.pch */,
+				1C69B3724438B81B138AF2C7A8207C90 /* Retryable-umbrella.h */,
+				F8669F3789D69867DC9F36DF2B769517 /* Retryable.debug.xcconfig */,
+				D68491740E3E493B01FF1BF43BC33D1E /* Retryable.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Retryable";
+			sourceTree = "<group>";
+		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +140,20 @@
 				09051B145C8B3E68CAF96A1B23A6DA9C /* Retryable.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3DE22A247624F4DDC153BDCDABC366C5 /* Retryable */ = {
+			isa = PBXGroup;
+			children = (
+				47FF7571BD01C306C3F939C5D7D97C13 /* RetryableTestCase.swift */,
+				DE6BBD9FAA0AF8531E6751E402B1C7B5 /* RetryableTestCaseRun.swift */,
+				BE0E4A4F342EE5C3F1F268B1479BB96E /* RetryCoordinator.swift */,
+				295D6CF18335EA6873CB9F86DEE1B643 /* RetryTestSuite.swift */,
+				FBC945AA9B315CBECE81E1378B16389B /* Pod */,
+				00E1B5D43BD000B3D75A96C18A20F570 /* Support Files */,
+			);
+			name = Retryable;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3E285571EF144F8DACCF451128B351DD /* iOS */ = {
@@ -154,33 +184,9 @@
 		B68F7897B566C5D050C6EF15F2EDFB78 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1ED3DB6C80ACADCA688FCD42812F351 /* Retryable */,
+				3DE22A247624F4DDC153BDCDABC366C5 /* Retryable */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		BBACEDC9DC19D7D5F07A145876452DF8 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				C813CD6110071EB43E178571E6226747 /* LICENSE */,
-				D13A3ADA0B96BBC113B7011E58CDFDFE /* README.md */,
-				FCBA74B56AD8858BC2450D27544EA7E7 /* Retryable.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		C59FCBB3E9AB93A2CB1F4F5EBA2C0DA7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				61F2B272D7E1EDEA2C9C8930415F3E66 /* Retryable.modulemap */,
-				374C76C2297916F7345A1CF93725E027 /* Retryable.xcconfig */,
-				039716B1B50AC4D66613DCCCB30F1407 /* Retryable-dummy.m */,
-				595A643000A015E4608927289785FD57 /* Retryable-Info.plist */,
-				8D7056AE12C5E8E7410841B3EFEE199A /* Retryable-prefix.pch */,
-				BBA2369E807860D1C7073E68772CCD1B /* Retryable-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Retryable";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -192,20 +198,6 @@
 				39676F509386BBCFFD3A29182B40315B /* Products */,
 				E8B43621CADABE5F18D55FF8D46109D2 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		E1ED3DB6C80ACADCA688FCD42812F351 /* Retryable */ = {
-			isa = PBXGroup;
-			children = (
-				A9E2095C1E0420F0012399D9DE8ECCC6 /* RetryableTestCase.swift */,
-				914E227B24E3DC54515343FBC8D4FA7D /* RetryableTestCaseRun.swift */,
-				C39C322F6BC0A32F60C02927C98E294C /* RetryCoordinator.swift */,
-				77C16FEAFA9A4433764CE119ED59B529 /* RetryTestSuite.swift */,
-				BBACEDC9DC19D7D5F07A145876452DF8 /* Pod */,
-				C59FCBB3E9AB93A2CB1F4F5EBA2C0DA7 /* Support Files */,
-			);
-			name = Retryable;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		E8B43621CADABE5F18D55FF8D46109D2 /* Targets Support Files */ = {
@@ -232,6 +224,16 @@
 			);
 			name = "Pods-Retryable_ExampleUITests";
 			path = "Target Support Files/Pods-Retryable_ExampleUITests";
+			sourceTree = "<group>";
+		};
+		FBC945AA9B315CBECE81E1378B16389B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E3FCDD8A6D6AD3DDFAE3B48B1D37C47E /* LICENSE */,
+				E177FD9B34B2EE98BA94E868F9B5E775 /* README.md */,
+				596DF6A69371162BCD0E316FDCE761E3 /* Retryable.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +337,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 39676F509386BBCFFD3A29182B40315B /* Products */;
@@ -394,10 +397,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40FC9EB04B0D5F24646C14DE26F18492 /* Retryable-dummy.m in Sources */,
-				D702C2F05278394F65B5DF3335431FD8 /* RetryableTestCase.swift in Sources */,
-				86E4FD93D3848CD5DDE6689BB359BEBC /* RetryableTestCaseRun.swift in Sources */,
-				88BB1576F3D78BB731AC28E36418D381 /* RetryCoordinator.swift in Sources */,
-				F1AACDCE81D69360D269CFAAAFC1FFCD /* RetryTestSuite.swift in Sources */,
+				F92DE70A0A8DE7C767C2A6A3B9DC7A5A /* RetryableTestCase.swift in Sources */,
+				EEF8778A44AE5D4512CD9AB709F327B9 /* RetryableTestCaseRun.swift in Sources */,
+				4736F31FEAC597296056CA3BD0E9EAD5 /* RetryCoordinator.swift in Sources */,
+				FB10961FAE23EA88A81FECD8435A6A58 /* RetryTestSuite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +483,38 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		221B8E5954FECBE99AC207FAA187091A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8669F3789D69867DC9F36DF2B769517 /* Retryable.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Retryable/Retryable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Retryable/Retryable-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Retryable/Retryable.modulemap";
+				PRODUCT_MODULE_NAME = Retryable;
+				PRODUCT_NAME = Retryable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -615,38 +650,6 @@
 			};
 			name = Release;
 		};
-		97F92EF6D7F10805F03206708C6098B7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 374C76C2297916F7345A1CF93725E027 /* Retryable.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Retryable/Retryable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Retryable/Retryable-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Retryable/Retryable.modulemap";
-				PRODUCT_MODULE_NAME = Retryable;
-				PRODUCT_NAME = Retryable;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		B54F0BD12F659AAA364AA116641C7A0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA8A7047780D15C4EA7699CC1C8F19FE /* Pods-Retryable_Example.debug.xcconfig */;
@@ -681,6 +684,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		BC384886E443009850144AAC4BD72695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D68491740E3E493B01FF1BF43BC33D1E /* Retryable.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Retryable/Retryable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Retryable/Retryable-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Retryable/Retryable.modulemap";
+				PRODUCT_MODULE_NAME = Retryable;
+				PRODUCT_NAME = Retryable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		F1A407CBED03F15286987C8F41D5D3AE /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -717,39 +753,6 @@
 			};
 			name = Debug;
 		};
-		FA29AAB94CEAC1FE2D9BE1E91D5CC369 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 374C76C2297916F7345A1CF93725E027 /* Retryable.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Retryable/Retryable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Retryable/Retryable-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Retryable/Retryable.modulemap";
-				PRODUCT_MODULE_NAME = Retryable;
-				PRODUCT_NAME = Retryable;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -765,8 +768,8 @@
 		4E41644F741A2EA4568C29C78CE76058 /* Build configuration list for PBXNativeTarget "Retryable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97F92EF6D7F10805F03206708C6098B7 /* Debug */,
-				FA29AAB94CEAC1FE2D9BE1E91D5CC369 /* Release */,
+				221B8E5954FECBE99AC207FAA187091A /* Debug */,
+				BC384886E443009850144AAC4BD72695 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
